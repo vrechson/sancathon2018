@@ -1,0 +1,236 @@
+@import "main";
+
+main{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 2fr 12fr;
+    // Barra lateral
+    aside.breadcrumb{
+        background: #f2f2f2;
+        border-right: 2px solid #eee;
+        .steps{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            // Item
+            .step{
+                opacity: .2;
+                padding: .5em;
+                margin: 0;
+                border-bottom: 2px solid $primary;
+                padding-bottom: 2em;
+                padding-top: 3em;
+                position: relative;
+                transition: .6s ease;
+                &.active{
+                    cursor: pointer;
+                    opacity: .4;
+                    transition: .6s ease;
+                    
+                    &:hover{
+                        background: #fff;
+                        opacity: .8;
+                        &::before{
+                            background: #fff;
+                        }
+                    }
+                }
+                &.actual{
+                    opacity: 1;
+                }
+                &:last-child{
+                    &::before{
+                        display: none;
+                    }
+                }
+                &::before{
+                    transition: .6s ease;
+                    position: absolute;
+                    content: '.';
+                    width: 40px;
+                    background: #f2f2f2;
+                    bottom: -10px;
+                    left: 50%;
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    transform: translateX(-50%);
+                }
+
+                .icon{
+                    img{
+                        width: 60px;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+                .label{
+                    padding: .5em;
+                    margin-top: .5em;
+                    font-family: 'Raleway', sans-serif;
+                    font-weight: 600;
+                    color: $primary;
+                    font-size: 16pt;
+                    text-align: center;
+                    display: block;
+                }
+
+                .arrow{
+                    color: $primary;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -10px;
+                    font-size: 12pt;
+                }
+            }
+        }
+    }
+
+    // Seções
+    section{
+        display: none;
+        &.active{
+            display: grid;
+        }
+    }
+
+    // Seção principal
+    section.main#greet{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 8fr 3fr;
+        .logo{
+            box-sizing: border-box;
+            img{
+            }
+            h1{
+                color: $primary;
+                font-size: 46pt;
+                margin: 0;
+                margin-top: .5em;
+                font-weight: 300;
+                font-family: 'Raleway', sans-serif;
+                display: block;
+                text-align: center;
+            }
+        }
+        .desc{
+            box-sizing: border-box;
+            padding: .25em 16em;
+            text-align: center;
+            color: #333;
+            // background: #222;
+            img{
+                width: 125px;
+            }
+            h1{
+                font-family: 'Raleway', sans-serif;
+                font-size: 22pt;
+            }
+            p{
+                font-family: 'Raleway', sans-serif;
+                font-size: 18pt;
+            }
+        }
+        .action{
+            text-align: center;
+            box-sizing: border-box;
+            button#next{
+                padding: 10px 70px;
+                margin: 20px;
+                border-radius: 50px;
+                border: 0;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 600;
+                font-size: 16pt;
+                color: #fff;
+                background: $primary;
+                outline: none;
+                border: 2px solid transparent;
+                transition: .6s ease;
+                cursor: pointer;
+                &:hover{
+                    background: #fff;
+                    border: 2px solid $primary;
+                    color: $primary;
+                    transition: .6s ease;
+                }
+            }
+
+        }
+    }
+
+    // Seção de Autenticação
+    section.main#auth{
+        padding: 2em 10em;
+        .title{
+            font-family: $pfont;
+            font-weight: 500;
+            color: $primary;
+            font-size: 30pt;
+            text-align: center;
+        }
+        .desc{
+            img{
+                display: block;
+                width: 125px;
+                margin: 1em auto;
+            }
+            p{
+                font-family: $pfont;
+                font-size: 16pt;
+                text-align: center;
+            }
+        }
+        .view{
+            h1{
+                font-family: $pfont;
+                font-size: 24pt;
+                text-align: center;
+                font-weight: 600;
+                color: $primary;
+            }
+            #cpfviewer{
+                width: 400px;
+                height: 40px;
+                text-align: center;
+                font-family: $sfont;
+                font-size: 24pt;
+                font-weight: 300;
+                display: block;
+                margin: 0 auto; 
+                border-bottom: 2px solid $primary;
+            }
+        }
+        .keyboard{
+            text-align: center;
+            button{
+                margin: .25em;
+                margin-top: 3em;
+                border: 2px solid $primary;
+                font-family: $sfont;
+                font-size: 16pt;
+                font-weight: 600;
+                width: 80px;
+                height: 60px;
+                padding: .5em 1em;
+                border-radius: 50px;
+                outline: none;
+                cursor: pointer;
+                background: $primary;
+                color: #fff;
+                transition: .6s ease;
+                &:hover{
+                    transition: .6s ease;
+                    color: $primary;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+}
+

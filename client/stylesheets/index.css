@@ -1,0 +1,290 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+/* Colors */
+/* Defs */
+/* Init */
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#emergencia {
+  position: absolute;
+  bottom: 0;
+  right: -136px;
+  bottom: -132px;
+  height: 250px;
+  width: 320px;
+  background: transparent;
+  border: 0;
+  color: #da0505;
+  padding: 2em 4em;
+  padding-right: 8em;
+  outline: 0;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+#emergencia .content {
+  bottom: 150px;
+  right: 150px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 15pt;
+  position: absolute;
+}
+
+#emergencia .icon {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-size: 28pt !important;
+  margin: .2em;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 2fr 12fr;
+}
+
+main aside.breadcrumb {
+  background: #f2f2f2;
+  border-right: 2px solid #eee;
+}
+
+main aside.breadcrumb .steps {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+main aside.breadcrumb .steps .step {
+  opacity: .2;
+  padding: .5em;
+  margin: 0;
+  border-bottom: 2px solid #68bed1;
+  padding-bottom: 2em;
+  padding-top: 3em;
+  position: relative;
+  transition: .6s ease;
+}
+
+main aside.breadcrumb .steps .step.active {
+  cursor: pointer;
+  opacity: .4;
+  transition: .6s ease;
+}
+
+main aside.breadcrumb .steps .step.active:hover {
+  background: #fff;
+  opacity: .8;
+}
+
+main aside.breadcrumb .steps .step.active:hover::before {
+  background: #fff;
+}
+
+main aside.breadcrumb .steps .step.actual {
+  opacity: 1;
+}
+
+main aside.breadcrumb .steps .step:last-child::before {
+  display: none;
+}
+
+main aside.breadcrumb .steps .step::before {
+  transition: .6s ease;
+  position: absolute;
+  content: '.';
+  width: 40px;
+  background: #f2f2f2;
+  bottom: -10px;
+  left: 50%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateX(-50%);
+}
+
+main aside.breadcrumb .steps .step .icon img {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+main aside.breadcrumb .steps .step .label {
+  padding: .5em;
+  margin-top: .5em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color: #68bed1;
+  font-size: 16pt;
+  text-align: center;
+  display: block;
+}
+
+main aside.breadcrumb .steps .step .arrow {
+  color: #68bed1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  font-size: 12pt;
+}
+
+main section {
+  display: none;
+}
+
+main section.active {
+  display: grid;
+}
+
+main section.main#greet {
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 8fr 3fr;
+}
+
+main section.main#greet .logo {
+  box-sizing: border-box;
+}
+
+main section.main#greet .logo h1 {
+  color: #68bed1;
+  font-size: 46pt;
+  margin: 0;
+  margin-top: .5em;
+  font-weight: 300;
+  font-family: 'Raleway', sans-serif;
+  display: block;
+  text-align: center;
+}
+
+main section.main#greet .desc {
+  box-sizing: border-box;
+  padding: .25em 16em;
+  text-align: center;
+  color: #333;
+}
+
+main section.main#greet .desc img {
+  width: 125px;
+}
+
+main section.main#greet .desc h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 22pt;
+}
+
+main section.main#greet .desc p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18pt;
+}
+
+main section.main#greet .action {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+main section.main#greet .action button#next {
+  padding: 10px 70px;
+  margin: 20px;
+  border-radius: 50px;
+  border: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16pt;
+  color: #fff;
+  background: #68bed1;
+  outline: none;
+  border: 2px solid transparent;
+  transition: .6s ease;
+  cursor: pointer;
+}
+
+main section.main#greet .action button#next:hover {
+  background: #fff;
+  border: 2px solid #68bed1;
+  color: #68bed1;
+  transition: .6s ease;
+}
+
+main section.main#auth {
+  padding: 2em 10em;
+}
+
+main section.main#auth .title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  color: #68bed1;
+  font-size: 30pt;
+  text-align: center;
+}
+
+main section.main#auth .desc img {
+  display: block;
+  width: 125px;
+  margin: 1em auto;
+}
+
+main section.main#auth .desc p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16pt;
+  text-align: center;
+}
+
+main section.main#auth .view h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 24pt;
+  text-align: center;
+  font-weight: 600;
+  color: #68bed1;
+}
+
+main section.main#auth .view #cpfviewer {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 24pt;
+  font-weight: 300;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 2px solid #68bed1;
+}
+
+main section.main#auth .keyboard {
+  text-align: center;
+}
+
+main section.main#auth .keyboard button {
+  margin: .25em;
+  margin-top: 3em;
+  border: 2px solid #68bed1;
+  font-family: "Roboto", sans-serif;
+  font-size: 16pt;
+  font-weight: 600;
+  width: 80px;
+  height: 60px;
+  padding: .5em 1em;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  background: #68bed1;
+  color: #fff;
+  transition: .6s ease;
+}
+
+main section.main#auth .keyboard button:hover {
+  transition: .6s ease;
+  color: #68bed1;
+  background: transparent;
+}
