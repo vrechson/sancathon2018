@@ -12,7 +12,7 @@ def getData():
     data['bpm'] = getHeartRate.getBPM(heartURL, 20)
     data['altura'] = getHeight.getHeight(offset)
     
-    avalData = []
+    avalData = [1,1,1]
     if (data['bpm'] > 140 or data['bpm'] < 60) :
         avalData[0] = 5
     else :
@@ -24,8 +24,11 @@ def getData():
     avalData[2] = data['motor']
 
     soma = 0
-    for i in avalData :
-        soma += i
+    if (avalData[0] == 5 or avalData[1] == 5 or avalData[2] == 5 ) :
+        soma = 15
+    else : 
+        for i in avalData :
+            soma += i
     completeData = [data, soma/3]
     return completeData
 
