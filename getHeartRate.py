@@ -6,7 +6,7 @@ import time
 
 url='http://172.20.84.78:8080/shot.jpg'
 
-def getBPM (url) :
+def getBPM (url, numSamples) :
 
     lastimg = 0
     threshholdValue = 210
@@ -17,25 +17,28 @@ def getBPM (url) :
     timer = []
     k = 0
 
-    for i in range(0, 60) :
+    for i in range(0, numSamples) :
 
-        imgResp=request.urlopen(url)
-        imgNp=np.array(bytearray(imgResp.read()),dtype=np.uint8)
-        img=cv2.imdecode(imgNp,-1)
-        # img = cv2.imread('shot.jpg')
-        #print (img.shape)
-        ret, thresh = cv2.threshold(img, threshholdValue, 255, cv2.THRESH_BINARY)
-        gray = cv2.cvtColor(thresh, cv2.COLOR_BGR2GRAY)    
-        contours, hierarchy = cv2.findContours(gray, 1, 2)
-
+        maxValue = 5
         j = 0
-        maxValue = 0
-        for l in contours :
-            area = cv2.contourArea(l)
-            j += 1
-            if (area > maxValue) :
-                maxValue = area
+        while (maxValue < 50000) :
+            imgResp=request.urlopen(url)
+            imgNp=np.array(bytearray(imgResp.read()),dtype=np.uint8)
+            img=cv2.imdecode(imgNp,-1)
+            # img = cv2.imread('shot.jpg')
+            #print (img.shape)
+            ret, thresh = cv2.threshold(img, threshholdValue, 255, cv2.THRESH_BINARY)
+            gray = cv2.cvtColor(thresh, cv2.COLOR_BGR2GRAY)    
+            contours, hierarchy = cv2.findContours(gray, 1, 2)
 
+            j = 0
+            maxValue = 0
+            for l in contours :
+                area = cv2.contourArea(l)
+                j += 1
+                if (area > maxValue) :
+                    maxValue = area
+        # print (maxValue)
         if i > 10 : 
             if not lastBiggestValues > maxValue :
                 lastBiggestValues = maxValue
@@ -78,4 +81,3 @@ def getBPM (url) :
 
     return freq/2
 
-print (getBPM(url))

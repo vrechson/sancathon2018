@@ -7,6 +7,6 @@ def getHeight(offset):
         s = ser.readline()
         if s :
             val = int(s)
-            print (val)
+           #  print (val)
 
     return (val + offset)/10
