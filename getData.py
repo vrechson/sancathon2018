@@ -1,5 +1,9 @@
 import getHeight
 import getHeartRate
+from firebase import firebase
+import time
+
+firebase = firebase.FirebaseApplication('https://calisto-17e20.firebaseio.com/', None)
 
 heartURL = 'http://172.20.84.78:8080/shot.jpg'
 frontCameraURL = []
@@ -9,10 +13,13 @@ def getData():
 
     data = {'bpm':'NaN', 'motor':1, 'irpm':15}
 
+    time.sleep(5)
     data['bpm'] = getHeartRate.getBPM(heartURL, 20)
+    
+    time.sleep(5)
     data['altura'] = getHeight.getHeight(offset)
     
-    avalData = []
+    avalData = [1, 1, 1]
     if (data['bpm'] > 140 or data['bpm'] < 60) :
         avalData[0] = 5
     else :
@@ -29,5 +36,19 @@ def getData():
     completeData = [data, soma/3]
     return completeData
 
-data = getData()
-print(data)
+while True :
+    result = firebase.get('Pedidos', None)
+    if result is not None :
+        for i in result :
+            data = getData()
+            print (data[0])
+            val = i
+            data[0]['aval'] = data[1]
+            motor = data[0]['motor']
+            proc = {'processed' : 0}
+            result = firebase.post('Respostas/'+str(val['id']), data[0])
+            firebase.delete('Pedidos', '0')
+            print (result)
+    
+#data = getData()
+#print(data)
