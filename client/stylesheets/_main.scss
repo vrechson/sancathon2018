@@ -1,0 +1,53 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+/* Colors */
+$primary: #68bed1;
+$primary-light: hsl(191, 53%, 71%);
+$danger: #da0505; 
+
+/* Defs */
+$pfont: 'Raleway', sans-serif;
+$sfont: 'Roboto', sans-serif;
+/* Init */
+body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#emergencia{
+    position: absolute;
+    bottom: 0;
+    right: -136px;
+    bottom: -132px;
+    height: 250px;
+    width: 320px;
+    background: transparent;
+    border: 0;
+    color: $danger;
+    padding: 2em 4em;
+    padding-right: 8em; 
+    outline: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    .content{
+        bottom: 150px;
+        right: 150px;
+        text-align: center;
+        font-family: $sfont;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 15pt;
+        position: absolute;
+    }
+    .icon{
+        
+        margin: 0 auto; 
+        display: block;
+        text-align: center;
+        font-size: 28pt !important;
+        margin: .2em;
+    }
+}
