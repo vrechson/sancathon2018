@@ -1,7 +1,7 @@
-import urllib.request as request
+import urllib as request
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import time
 
 url='http://172.20.84.78:8080/shot.jpg'
@@ -26,7 +26,7 @@ def getBPM (url) :
         #print (img.shape)
         ret, thresh = cv2.threshold(img, threshholdValue, 255, cv2.THRESH_BINARY)
         gray = cv2.cvtColor(thresh, cv2.COLOR_BGR2GRAY)    
-        img2, contours, hierarchy = cv2.findContours(gray, 1, 2)
+        contours, hierarchy = cv2.findContours(gray, 1, 2)
 
         j = 0
         maxValue = 0
@@ -76,6 +76,6 @@ def getBPM (url) :
     #plt.show()
     #print (freq/4, ' bmp')
 
-    return freq/8
+    return freq/2
 
 print (getBPM(url))
