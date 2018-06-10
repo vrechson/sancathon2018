@@ -12,6 +12,8 @@
     <script src="scripts/coleta.js"></script>
     <script src="scripts/coleta_dor.js"></script>
     <script src="scripts/coleta_bpm.js"></script>
+    <script src="scripts/coleta_height.js"></script>
+    <script src="scripts/coleta_breath.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
     <script>
     // Initialize Firebase
@@ -94,7 +96,7 @@
                 </p>
             </div>
             <div class="actions">
-                <button class='btn' id="start">Iniciar Contagem</button>
+                <button class='btn' id="starthb">Iniciar Contagem</button>
                 <div id="counter">00:15</div>
                 <div id="bpmmessage">Pronto, já pode remover o dedo do sensor!<span id='bpm'></span></div>
                 <button class='btn' id="nexthb">Continuar</button>
@@ -111,13 +113,46 @@
                 </p>
             </div>
             <div class="actions">
-                <button class='btn' id="start">Iniciar Contagem</button>
-                <div id="counter">00:05</div>
-                <div id="bpmmessage">Pronto, já pode remover o dedo do sensor!<span id='bpm'></span></div>
-                <button class='btn' id="nexthb">Continuar</button>
+                <button class='btn' id="startheight">Iniciar Contagem</button>
+                <div id="counterheight">00:05</div>
+                <div id="heightmessage">Tudo certo!<span id='heightdata'></span></div>
+                <button class='btn' id="nextheight">Continuar</button>
+            </div>
+        </section>
+
+        <!-- Respiração -->
+        <section class='main' id='breath'>
+            <div class="title">Taxa Respiratória</div>
+            <div class="desc">
+                <img src="assets/lungs.svg" alt="">
+                <p id='breathdesc'>
+                    Aperte o botão e respire fundo até a contagem acabar!
+                </p>
+            </div>
+            <div class="actions">
+                <button class='btn' id="startbreath">Iniciar Contagem</button>
+                <div id="counterbreath">00:05</div>
+                <div id="breathmessage">Tudo certo!<span id='breathdata'></span></div>
+                <button class='btn' id="nextbreath">Continuar</button>
             </div>
         </section>
         
+        <!-- Resposta Motora -->
+        <section class='main' id='motor'>
+                <div class="title">Resposta Motora</div>
+                <!-- <div class="desc">
+                    <img src="assets/lungs.svg" alt="">
+                    <p id='breathdesc'>
+                        Aperte o botão e respire fundo até a contagem acabar!
+                    </p>
+                </div>
+                <div class="actions">
+                    <button class='btn' id="startbreath">Iniciar Contagem</button>
+                    <div id="counterbreath">00:05</div>
+                    <div id="breathmessage">Tudo certo!<span id='breathdata'></span></div>
+                </div> -->
+                <button class='btn' id="nextmotor">Continuar</button>
+            </section>
     </main>
     <button id='emergencia'>
         <div class='content'>

@@ -199,12 +199,12 @@ main{
 }
 
 section#height{
-    padding-top: 1em;
+    padding-top: 1.5em;
     .title{
         font-family: $pfont;
-        font-size: 24pt;
+        font-size: 30pt;
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
         color: $primary;
     }
     .desc{
@@ -213,6 +213,107 @@ section#height{
             display: block;
             margin: 0 auto;
             width: 100px;
+        }
+        p{
+            font-family: $pfont;
+            font-size: 18pt;
+            text-align: center;
+        }
+    }
+    .actions{
+        #startheight{
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #counterheight{
+            display: none;
+            margin-top: .5em;
+            font-family: $sfont;
+            font-weight: 600;
+            color: $primary;
+            text-align: center;
+            font-size: 32pt;
+        }
+        
+        #heightmessage{
+            display: none;
+            margin: .5em;
+            margin-top: 2em;
+            font-family: $pfont;
+            font-size: 24pt;
+            text-align: center;
+        }
+
+        #nextheight{
+            display: none;
+            margin: 0 auto;
+            margin-top: 1.5em;
+        }
+        
+        #heightdata{
+            color: $primary;
+            display: block;
+        }
+    }
+}
+
+section#breath{
+    padding-top: 1.5em;
+    .title{
+        font-family: $pfont;
+        font-size: 30pt;
+        text-align: center;
+        font-weight: 500;
+        color: $primary;
+    }
+    .desc{
+        padding-top: 1em;
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+        }
+        p{
+            font-family: $pfont;
+            font-size: 18pt;
+            text-align: center;
+        }
+    }
+    .actions{
+        #startbreath{
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #counterbreath{
+            display: none;
+            margin-top: .5em;
+            font-family: $sfont;
+            font-weight: 600;
+            color: $primary;
+            text-align: center;
+            font-size: 32pt;
+        }
+        
+        #breathmessage{
+            display: none;
+            margin: .5em;
+            margin-top: 2em;
+            font-family: $pfont;
+            font-size: 24pt;
+            text-align: center;
+        }
+
+        #nextbreath{
+            display: none;
+            margin: 0 auto;
+            margin-top: 1.5em;
+        }
+        
+        #breathdata{
+            color: $primary;
+            display: block;
         }
     }
 }
