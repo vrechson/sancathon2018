@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PAAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/coleta.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="scripts/breadcrumb.js"></script>
+    <script src="scripts/coleta.js"></script>
+    <script src="scripts/coleta_dor.js"></script>
+    <script src="scripts/coleta_bpm.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyC1vSkwIBJbgng0c8xiZfBzYUyWxifiUxc",
+        authDomain: "calisto-17e20.firebaseapp.com",
+        databaseURL: "https://calisto-17e20.firebaseio.com",
+        projectId: "calisto-17e20",
+        storageBucket: "calisto-17e20.appspot.com",
+        messagingSenderId: "32017833243"
+    };
+    firebase.initializeApp(config);
+    var db = firebase.database()
+    </script>
+</head>
+<body>
+    <main>
+        <aside class='breadcrumb'>
+            <ul class='steps'>
+                <li class='step active actual' onclick='jumpState(0)'>
+                    <div class="icon">
+                        <img src="assets/pain.svg" alt="">
+                    </div>
+                    <div class="label">Sua Dor</div>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </li>
+                <li class='step' onclick='jumpState(1)'>
+                    <div class="icon">
+                        <img src="assets/heartbeat.svg" alt="">
+                    </div>
+                    <div class="label">Batimento Cardíaco</div>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </li>
+                <li class='step' onclick='jumpState(2)'>
+                    <div class="icon">
+                        <img src="assets/height.svg" alt="">
+                    </div>
+                    <div class="label">Altura</div>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </li>
+                <li class='step' onclick='jumpState(3)'>
+                    <div class="icon">
+                        <img src="assets/breath.svg" alt="">
+                    </div>
+                    <div class="label">Respiração</div>
+                    <i class="fas fa-chevron-down arrow"></i>
+                </li>
+                <li class='step' onclick='jumpState(1)'>
+                    <div class="icon">
+                        <img src="assets/eye.svg" alt="">
+                    </div>
+                    <div class="label">Resposta Motora</div>
+                </li>
+            </ul>
+        </aside>
+
+
+        <!-- Greeting -->
+        <section class='main active' id='pain' style='display: grid'>
+            <div class="title">
+                <h1>Indique sua dor</h1>
+                <h2>Aperte onde dói</h2>
+            </div>
+            <div class="map">
+                <img id='map' src="assets/bodyoutline.jpg" alt="">
+                <div class="action">
+                    <button class='btn' id='next'>Continuar</button>
+                    <button class='btn' id='cancel'>Cancelar</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Batimento Cardíaco -->
+        <section class='main' id='heartbeat'>
+            <div class="title">Medição do Batimento Cardíaco</div>
+            <div class="desc">
+                <img src="assets/heartbeat_1.svg" alt="">
+                <p id='bpmdesc'>
+                    Aperte seu dedo contra o sensor durante até o contador acabar, aperte o botão para iniciar!
+                </p>
+            </div>
+            <div class="actions">
+                <button class='btn' id="start">Iniciar Contagem</button>
+                <div id="counter">00:15</div>
+                <div id="bpmmessage">Pronto, já pode remover o dedo do sensor!<span id='bpm'></span></div>
+                <button class='btn' id="nexthb">Continuar</button>
+            </div>
+        </section>
+        
+        <!-- Altura -->
+        <section class='main' id='height'>
+            <div class="title">Medição da Altura</div>
+            <div class="desc">
+                <img src="assets/ruler.svg" alt="">
+                <p id='heightdesc'>
+                    Mantenha uma postura ereta e aperte o botão para iniciar!
+                </p>
+            </div>
+            <div class="actions">
+                <button class='btn' id="start">Iniciar Contagem</button>
+                <div id="counter">00:05</div>
+                <div id="bpmmessage">Pronto, já pode remover o dedo do sensor!<span id='bpm'></span></div>
+                <button class='btn' id="nexthb">Continuar</button>
+            </div>
+        </section>
+        
+    </main>
+    <button id='emergencia'>
+        <div class='content'>
+            <i class="fas fa-ambulance icon"></i>
+            Emergência
+        </div>
+    </button>
+    <div id="levels">
+        <button class='painlevel' level='0'><img src="assets/neutral.png" alt=""></button>
+        <button class='painlevel' level='1'><img src="assets/sad.png" alt=""></button>
+        <button class='painlevel' level='2'><img src="assets/extreme.png" alt=""></button>
+    </div>
+</body>
+</html>

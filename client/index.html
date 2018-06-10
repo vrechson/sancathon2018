@@ -7,6 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/index.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC1vSkwIBJbgng0c8xiZfBzYUyWxifiUxc",
+        authDomain: "calisto-17e20.firebaseapp.com",
+        databaseURL: "https://calisto-17e20.firebaseio.com",
+        projectId: "calisto-17e20",
+        storageBucket: "calisto-17e20.appspot.com",
+        messagingSenderId: "32017833243"
+      };
+      firebase.initializeApp(config);
+      var db = firebase.database()
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="scripts/index.js"></script>
 </head>

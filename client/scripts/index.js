@@ -41,8 +41,12 @@ const jumpState = (step) => {
 const addDigit = (digit) => {
     cpf += digit
     $("#cpfviewer").html(cpf)
-    if(cpf.length == 11)
+    if(cpf.length == 11){
+        db.ref('machines/1/state').set({
+            'cpf' : cpf
+        })
         window.location.replace('coleta_dados.html')
+    }
 }
 
 $(() => {
