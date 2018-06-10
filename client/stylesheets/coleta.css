@@ -46,6 +46,83 @@ body {
   margin: .2em;
 }
 
+#modal-case {
+  display: none;
+}
+
+#modal-case #modal-container {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18pt;
+  width: 750px;
+  margin-left: 35%;
+  margin-top: 15%;
+  position: absolute;
+  z-index: 3;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#modal-case #modal-container #modal-header {
+  display: inline-block;
+}
+
+#modal-case #modal-container #modal-header #modal-title {
+  padding: 20px 20px 0px 13px;
+  float: left;
+  width: 660px;
+  font-size: 25px;
+}
+
+#modal-case #modal-container #modal-header #modal-close {
+  padding: 25px 27px 0px 15px;
+  width: 10px;
+  color: #929292;
+  float: left;
+}
+
+#modal-case #modal-container #modal-header #modal-close:hover {
+  color: #000;
+}
+
+#modal-case #modal-container .modal-separator {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#modal-case #modal-container #modal-body {
+  minheight: 100px;
+  padding: 20px 30px 30px 30px;
+}
+
+#modal-case #modal-container #emergency-button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16pt;
+  padding: 25px;
+  font-size: 20px;
+  background-color: #68bed1;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  transition: .6s ease;
+  color: #fff;
+  width: 100%;
+}
+
+#modal-case #modal-container #emergency-button:hover {
+  color: #68bed1;
+  background-color: #fff;
+  border: 3px solid #68bed1;
+}
+
+#modal-case #modal-shadow {
+  background-color: rgba(0, 0, 0, 0.664);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
 .btn {
   padding: 10px 70px;
   margin: 20px;
@@ -440,3 +517,4 @@ section#breath .actions #breathdata {
   border-radius: 25px;
   box-shadow: 0 2px 5px #eee;
 }
+/*# sourceMappingURL=coleta.css.map */

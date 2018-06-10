@@ -12,6 +12,7 @@
     <script src="scripts/coleta.js"></script>
     <script src="scripts/coleta_dor.js"></script>
     <script src="scripts/coleta_bpm.js"></script>
+    <script src="scripts/utils.js"></script>
     <script src="scripts/coleta_height.js"></script>
     <script src="scripts/coleta_breath.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
@@ -160,6 +161,26 @@
             Emergência
         </div>
     </button>
+    <div id='modal-case'>
+            <div id='modal-shadow'></div>
+            <div id='modal-container'>
+                <div id='modal-header'>
+                    <div id='modal-title'>
+                        <span class='modal-formatting'>Realmente deseja solicitar uma ambulânica?</span>
+                    </div>
+                    <div id='modal-close'>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <hr class='modal-separator' />
+                <div id='modal-body'>
+                    <button id='emergency-button'>
+                        Solicitar agora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="levels">
         <button class='painlevel' level='0'><img src="assets/neutral.png" alt=""></button>
         <button class='painlevel' level='1'><img src="assets/sad.png" alt=""></button>
