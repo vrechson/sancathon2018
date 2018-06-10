@@ -7,6 +7,19 @@ var bpm         = 0
 const backToIni = () => {
     window.location.replace('coleta_dados.html')
 }
+
+const resetBPM = () => {
+    $("#bpmdesc").show()
+    $("#starthb").show()
+    $("#counter").html('00:15').hide()
+    $("#restarthb").hide()
+    $("#cancelhb").hide()
+    $("#bpmmessage").hide()
+    $("#nexthb").hide()
+    jumpState(1)
+    
+}
+
 const requestBPM = () => {
     requestID = (Math.random() * 100000) | 0
     db.ref('machines/1/state').once('value', snap => {

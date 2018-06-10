@@ -174,9 +174,10 @@ p {
   font-size: 20pt;
 }
 
-main button.btn {
+main a.btn {
   display: block;
   font-size: 18pt;
+  width: 35%;
   margin: 2em auto;
 }
 
