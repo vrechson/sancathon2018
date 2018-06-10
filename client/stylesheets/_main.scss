@@ -50,6 +50,21 @@ body{
     }
 }
 
+#begin {
+    @extend #emergencia;
+    color: #000;
+    top: 0px;
+    font-size: 30px;
+    right: -120px;
+    .content {
+        .fas {
+            color: $primary;
+            font-size: 45pt !important;
+        }
+    }
+
+}
+
 #modal-case { 
     display: none;
     #modal-container {

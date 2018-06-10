@@ -10,7 +10,7 @@ body {
   overflow: hidden;
 }
 
-#emergencia {
+#emergencia, #begin {
   position: absolute;
   bottom: 0;
   right: -136px;
@@ -27,7 +27,7 @@ body {
   cursor: pointer;
 }
 
-#emergencia .content {
+#emergencia .content, #begin .content {
   bottom: 150px;
   right: 150px;
   text-align: center;
@@ -38,12 +38,24 @@ body {
   position: absolute;
 }
 
-#emergencia .icon {
+#emergencia .icon, #begin .icon {
   margin: 0 auto;
   display: block;
   text-align: center;
   font-size: 28pt !important;
   margin: .2em;
+}
+
+#begin {
+  color: #000;
+  top: 0px;
+  font-size: 30px;
+  right: -120px;
+}
+
+#begin .content .fas {
+  color: #68bed1;
+  font-size: 45pt !important;
 }
 
 #modal-case {
