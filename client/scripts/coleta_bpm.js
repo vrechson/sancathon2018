@@ -25,9 +25,8 @@ const listenBPM = () => {
 }
 
 const startCount = () => {
-    $("#next").fadeIn(400)
     $("#counter").fadeIn(400)
-    $("#start").fadeOut(400)
+    $("#starthb").fadeOut(400)
     $("#bpmdesc").fadeOut(400)
     requestBPM()
     listenBPM()

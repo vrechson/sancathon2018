@@ -5,12 +5,14 @@ var state = {
 
 const easeTime  = 400
 var steps       = [] 
-const actions   = ['pain', 'heartbeat', 'height']
+const actions   = ['pain', 'heartbeat', 'height', 'breath', 'motor']
  
 /** Alinha o estado da execução */
 changeState = (diff) => {
     state.currAction += diff
-    
+    // Limiar (redirecionamento)
+    if(state.currAction == 5)
+        window.location.replace('atendimento.html')
     // Mudança de estado
     $(`#${actions[state.currAction - diff]}`).fadeOut( easeTime )
     setTimeout(()=>{
@@ -28,13 +30,14 @@ changeState = (diff) => {
 
 $(() => {
     steps = $("li.step")
-    $("#next").click( e => changeState(1) )
-    $("#nexthb").click( e => changeState(1) )
+    $("#next, #nexthb, #nextheight, #nextbreath, #nextmotor").click( e => changeState(1) )
     $(".key_button").click(e => addDigit($(e.target).html()))
     $(document).mousemove(registerMouse)
     $("#map").click(painMapClick)
     $(".painlevel").click(painLevelClick)
-    $("#start").click(startCount)
+    $("#starthb").click(startCount)
+    $("#startheight").click(startCountHeight)
+    $("#startbreath").click(startCountBreath)
     $("#cancel").click(removePainSpots)
     offset = $("#map").offset()
 

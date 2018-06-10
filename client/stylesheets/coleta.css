@@ -355,14 +355,14 @@ main section.main#heartbeat .actions #nexthb {
 }
 
 section#height {
-  padding-top: 1em;
+  padding-top: 1.5em;
 }
 
 section#height .title {
   font-family: "Raleway", sans-serif;
-  font-size: 24pt;
+  font-size: 30pt;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   color: #68bed1;
 }
 
@@ -374,6 +374,110 @@ section#height .desc img {
   display: block;
   margin: 0 auto;
   width: 100px;
+}
+
+section#height .desc p {
+  font-family: "Raleway", sans-serif;
+  font-size: 18pt;
+  text-align: center;
+}
+
+section#height .actions #startheight {
+  display: block;
+  margin: 0 auto;
+}
+
+section#height .actions #counterheight {
+  display: none;
+  margin-top: .5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: #68bed1;
+  text-align: center;
+  font-size: 32pt;
+}
+
+section#height .actions #heightmessage {
+  display: none;
+  margin: .5em;
+  margin-top: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 24pt;
+  text-align: center;
+}
+
+section#height .actions #nextheight {
+  display: none;
+  margin: 0 auto;
+  margin-top: 1.5em;
+}
+
+section#height .actions #heightdata {
+  color: #68bed1;
+  display: block;
+}
+
+section#breath {
+  padding-top: 1.5em;
+}
+
+section#breath .title {
+  font-family: "Raleway", sans-serif;
+  font-size: 30pt;
+  text-align: center;
+  font-weight: 500;
+  color: #68bed1;
+}
+
+section#breath .desc {
+  padding-top: 1em;
+}
+
+section#breath .desc img {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
+
+section#breath .desc p {
+  font-family: "Raleway", sans-serif;
+  font-size: 18pt;
+  text-align: center;
+}
+
+section#breath .actions #startbreath {
+  display: block;
+  margin: 0 auto;
+}
+
+section#breath .actions #counterbreath {
+  display: none;
+  margin-top: .5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: #68bed1;
+  text-align: center;
+  font-size: 32pt;
+}
+
+section#breath .actions #breathmessage {
+  display: none;
+  margin: .5em;
+  margin-top: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 24pt;
+  text-align: center;
+}
+
+section#breath .actions #nextbreath {
+  display: none;
+  margin: 0 auto;
+  margin-top: 1.5em;
+}
+
+section#breath .actions #breathdata {
+  color: #68bed1;
+  display: block;
 }
 
 #levels {
