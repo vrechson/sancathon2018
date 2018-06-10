@@ -21,6 +21,8 @@ def getData(label):
         return getHeight.getHeight(offset)
     elif (label == 'priority'):
         return 0
+    elif (label == 'peso'):
+        return 70
     
     # if (data['bpm'] > 140 or data['bpm'] < 60) :
         # avalData[0] = 5
@@ -38,6 +40,72 @@ def getData(label):
     # completeData = [data, soma/3]
     # return completeData
 
+ambu = {
+    'alergia' : [
+        'asma',
+        'rinite',
+        'alergia',
+        'irritacao de pele'
+    ],
+    'problema de audicao' : [
+        'problema de audicao'
+    ],
+    'queimados' : [
+        'queimadura'
+    ], 
+    'hematologia' : [
+        'leucemia',
+        'cancer'
+    ],
+    'cefaleia' : [
+        'enxaqueca',
+        'dor de cabeca',
+        'confusao',
+        'convulsoes'
+    ],
+    'dermatologista' : [
+        'hanseniase',
+        'micose',
+        'manchas na pele',
+        'coceira',
+        'sudorese'
+    ],
+    'gastro' : [
+        'vomito',
+        'desidratacao',
+        'intoxicacao',
+        'nausea'
+    ],
+    'narcoticos' : [
+        'uso de drogas',
+        'intoxicacao',
+        'perda de conciencia',
+        'convulsoes'
+    ]
+
+}
+
+def sep (tags) :
+
+    peso = {'alergia' : 0, 'problema de audicao' : 0, 'queimados' : 0, 'hematologia' : 0, 'cefaleia' : 0, 'dermatologista' : 0, 'gastro' : 0, 'narcoticos' : 0}
+    realtags = tags[5:]
+    for i in realtags:
+        for (k, v) in ambu.items() :
+            for j in v :
+                if j in tags :
+                    peso[k]+=1
+
+    key = ''
+    value = 0
+    for k, v in peso.items() :
+        if v > value :
+            key = k
+            value = v
+    
+    if value is 0 :
+        return 'geral'
+    return key
+
 while True :
     result = firebase.get('Pedidos', None)
     print (result)
@@ -47,6 +115,6 @@ while True :
             result = firebase.post('Respostas/', data)
             firebase.delete('Pedidos', '0')
             print (result)
-    
-#data = getData()
-#print(data)
+    resultMisc = firebase.get('')
+
+
