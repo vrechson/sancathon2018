@@ -9,7 +9,7 @@ heartURL = 'http://172.20.84.78:8080/shot.jpg'
 frontCameraURL = []
 offset = 0
 
-def getData(label):
+def getData(label, id):
 
     if (label == 'bpm') :
         time.sleep(5)
@@ -24,6 +24,9 @@ def getData(label):
         return 0
     elif (label == 'peso'):
         return 70
+    elif (label == 'tag'):
+        values = firebase.get('tags/'+id, None)
+        return sep(values)
     
     # if (data['bpm'] > 140 or data['bpm'] < 60) :
         # avalData[0] = 5
@@ -105,6 +108,7 @@ def sep (tags) :
     
     if value is 0 :
         return 'geral'
+
     return key
 
 while True :
@@ -113,9 +117,10 @@ while True :
     if result is not None :
         for i in result:
             if i is not None :
-                value = getData(i['label'])
+                value = getData(i['label'], i['id'])
                 data = { i['label'] : value}
                 result = firebase.post('Respostas/'+str(i['id']), data)
+                firebase.post('perfil/'+str(i['cpf'])+'/'+str(i['id']), data)
                 firebase.delete('pedidos', '0')
                 print (result)
     
