@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PAAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/finalizar.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC1vSkwIBJbgng0c8xiZfBzYUyWxifiUxc",
+        authDomain: "calisto-17e20.firebaseapp.com",
+        databaseURL: "https://calisto-17e20.firebaseio.com",
+        projectId: "calisto-17e20",
+        storageBucket: "calisto-17e20.appspot.com",
+        messagingSenderId: "32017833243"
+      };
+      firebase.initializeApp(config);
+      var db = firebase.database()
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="scripts/finalizar.js"></script>
+</head>
+<body>
+    
+    <main>
+        <h1>Uma última coisa!</h1>
+        <p>Por favor selecione as condições que você experienciou recentemente, para que possamos enquadrar melhor o seu perfil de saúde.</p>
+        <div id="container">
+            
+        </div>
+
+        <a href='meusdados.html' style='text-decoration: none' class='btn'>Finalizar</a>
+    </main>
+
+
+    <button id='emergencia'>
+        <div class='content'>
+            <i class="fas fa-ambulance icon"></i>
+            Emergência
+        </div>
+    </button>
+
+    <div id='modal-case'>
+            <div id='modal-shadow'></div>
+            <div id='modal-container'>
+                <div id='modal-header'>
+                    <div id='modal-title'>
+                        <span class='modal-formatting'>Realmente deseja solicitar uma ambulância?</span>
+                    </div>
+                    <div id='modal-close'>
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <hr class='modal-separator' />
+                <div id='modal-body'>
+                    <button id='emergency-button'>
+                        Solicitar agora
+                    </button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

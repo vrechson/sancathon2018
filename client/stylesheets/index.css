@@ -378,11 +378,11 @@ main section.main#auth .keyboard {
 }
 
 main section.main#auth .keyboard button {
-  margin: .25em;
+  margin: .15em;
   margin-top: 3em;
   border: 2px solid #68bed1;
   font-family: "Roboto", sans-serif;
-  font-size: 16pt;
+  font-size: 15pt;
   font-weight: 600;
   width: 80px;
   height: 60px;

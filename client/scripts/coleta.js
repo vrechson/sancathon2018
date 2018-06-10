@@ -31,6 +31,7 @@ changeState = (diff) => {
 $(() => {
     steps = $("li.step")
     $("#next, #nexthb, #nextheight, #nextbreath, #nextmotor").click( e => changeState(1) )
+    $("#nextbreath").click( e => changeState(1) )
     $(".key_button").click(e => addDigit($(e.target).html()))
     $(document).mousemove(registerMouse)
     $("#map").click(painMapClick)
