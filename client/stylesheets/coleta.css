@@ -335,6 +335,7 @@ main section.main#heartbeat .actions #counter {
   font-weight: 600;
   font-size: 48pt;
   color: #68bed1;
+  margin: 0 0 100px 0;
 }
 
 main section.main#heartbeat .actions #bpmmessage {
@@ -347,6 +348,35 @@ main section.main#heartbeat .actions #bpmmessage #bpm {
   display: block;
   font-weight: 600;
   margin-bottom: 2em;
+}
+
+main section.main#heartbeat .actions #restarthb {
+  display: none;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #68bed1;
+  border-color: transparent;
+  margin-rights: 10px;
+}
+
+main section.main#heartbeat .actions #restarthb:hover {
+  background-color: #fff;
+  color: #68bed1;
+  border-color: #68bed1;
+}
+
+main section.main#heartbeat .actions #cancelhb {
+  display: none;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #da0505;
+  border-color: transparent;
+}
+
+main section.main#heartbeat .actions #cancelhb:hover {
+  background-color: #fff;
+  color: #da0505;
+  border-color: #da0505;
 }
 
 main section.main#heartbeat .actions #nexthb {

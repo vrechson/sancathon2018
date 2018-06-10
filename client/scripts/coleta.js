@@ -36,6 +36,8 @@ $(() => {
     $("#map").click(painMapClick)
     $(".painlevel").click(painLevelClick)
     $("#starthb").click(startCount)
+    $("#restarthb").click(startCount)
+    $("#cancelhb").click(backToIni)
     $("#startheight").click(startCountHeight)
     $("#startbreath").click(startCountBreath)
     $("#cancel").click(removePainSpots)

@@ -4,7 +4,9 @@ var interval    = 0
 var requestID   = 0
 var bpm         = 0  
 
-
+const backToIni = () => {
+    window.location.replace('coleta_dados.html')
+}
 const requestBPM = () => {
     requestID = (Math.random() * 100000) | 0
     db.ref('machines/1/state').once('value', snap => {
@@ -25,9 +27,13 @@ const listenBPM = () => {
 }
 
 const startCount = () => {
+    count = 16
+    clearInterval(interval)
     $("#counter").fadeIn(400)
     $("#starthb").fadeOut(400)
     $("#bpmdesc").fadeOut(400)
+    $("#cancelhb").fadeIn(400)
+    $("#restarthb").fadeIn(400)
     requestBPM()
     listenBPM()
     interval = setInterval( () => { 
@@ -39,6 +45,8 @@ const startCount = () => {
             $("#nexthb").fadeIn(400)
             $("#bpmmessage").fadeIn(400)
             $("#bpm").html(parseInt(bpm) + " BPM")
+            $("#cancelhb").fadeOut(400)
+            $("#restarthb").fadeOut(400)
         }
     }, 1000)
 }
