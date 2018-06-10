@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PAAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/atendimento.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC1vSkwIBJbgng0c8xiZfBzYUyWxifiUxc",
+        authDomain: "calisto-17e20.firebaseapp.com",
+        databaseURL: "https://calisto-17e20.firebaseio.com",
+        projectId: "calisto-17e20",
+        storageBucket: "calisto-17e20.appspot.com",
+        messagingSenderId: "32017833243"
+      };
+      firebase.initializeApp(config);
+      var db = firebase.database()
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <main>
+        <h1 class="title">Em que posso te ajudar?</h1>
+        <section class="categories">
+            <a href='agendar.html'>
+                <div class="category">
+                    <img src="assets/calendar.svg" alt="">
+                    <h2 class='subtitle'>Agendar Consulta</h2>
+                    <p class='desc'>
+                        Agendaremos uma consulta para você na unidade de saúde de sua preferência, e lhe avisaremos o tempo aproximado de atendimento.
+                    </p>
+                </div>
+            </a>
+            <a href='remedios.html'>
+                <div class="category">
+                    <img src="assets/medicine.svg" alt="">
+                    <h2 class='subtitle'>Verificar Remédios</h2>
+                    <p class='desc'>
+                        Verifique se certos remédios estão ou não disponíveis perto de você.
+                    </p>
+                </div>
+            </a>
+            <a href='meusdados.html'>
+                <div class="category">
+                    <img src="assets/avatar.svg" alt="">
+                    <h2 class='subtitle'>Minha Saúde</h2>
+                    <p class='desc'>
+                        Veja seus dados, e verifique como anda a sua saúde.
+                    </p>
+                </div>
+            </a>
+        </section>
+
+    </main>
+    <button id='emergencia'>
+        <div class='content'>
+            <i class="fas fa-ambulance icon"></i>
+            Emergência
+        </div>
+    </button>
+</body>
+</html>

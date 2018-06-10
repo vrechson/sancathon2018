@@ -1,0 +1,175 @@
+@import "main";
+
+main{
+    padding: 0 2em;
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    border-radius: 25px;
+    margin: 1em;
+    box-shadow: 0 0 10px #e5e5e5;
+    aside.personal{
+        padding-right: 2em; 
+        border-right: 2px solid #eee;
+        .icon{
+            padding: 2em;
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+        }
+        h1#name{
+            font-family: $pfont;
+            font-size: 18pt;
+            text-align: center;
+            color: $primary;
+        }
+        h2{
+            font-family: $pfont;
+            font-size: 15pt;
+            font-weight: 600;
+            color: $primary;
+            img{
+                position: relative;
+                top: 5px;
+                margin-right: .5em;
+                width: 25px;
+            }
+            margin: 0;
+        }
+        #idade{
+            // text-align: center;
+            display: block;
+            padding-left: 2em;
+            font-family: $sfont;
+        }
+        .btn{
+            display: block;
+            font-size: 18pt;
+            text-align: center;
+            margin-top: 12em;
+        }
+    }
+
+    section.data{
+        padding: 0 2em;
+        padding-bottom: 5em;
+        .vitals{
+            // display: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            h1{
+                font-family: $pfont;
+                font-size: 14pt;
+                text-transform: uppercase;
+                color: $primary;
+            }
+        }
+        .imc{
+            // display: none;
+            h1{
+                font-family: $pfont;
+                font-size: 14pt;
+                text-transform: uppercase;
+                color: $primary;
+            }
+        }
+        .consultas{
+            h1{
+                font-family: $pfont;
+                font-size: 14pt;
+                text-transform: uppercase;
+                color: $primary;
+            }
+            .consulta{
+                display: inline-block;
+                padding: .75em;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px #eee;
+                border-bottom: 2px solid $primary;
+                margin-right: 1em;
+                cursor: pointer;
+                &:hover{
+                    background: #f5f5f5;
+                }
+                &.expired{
+                    opacity: .5;
+                }
+                .data{
+                    display: block;
+                    text-align: center;
+                    font-size: 16pt;
+                    font-weight: 700;
+                    font-family: $sfont;
+                    color: $primary;
+                }
+                .local{
+                    text-align: center;
+                    font-size: 9pt;
+                    text-transform: uppercase;
+                    font-family: $pfont;
+                    color: #555;
+                }
+            }
+        }
+    }
+}
+
+#consulta-pop{
+    display: none;
+    position: absolute;
+    width: 50%;
+    height: 60%;
+    border-radius: 25px;
+    left: 50%;
+    padding: 1em;
+    transform: translateX(-50%);
+    top: 100px;
+    background: #fff;
+    z-index: 1;
+
+    h1{
+        text-align: center;
+        margin: 0;
+        font-family: $pfont;
+        color: $primary;
+        font-size: 20pt;
+        border-bottom: 2px solid #eee;
+        padding-bottom: .5em;
+    }
+
+    h2{
+        margin: .25em 0;
+    }
+
+    .cdata{
+        font-family: $sfont;
+    }
+
+    .container{
+        padding: 1em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        font-family: $pfont;
+        div{
+            margin-bottom: 1em;
+        }
+    }
+    .block{
+        padding: 1em;
+        display: grid;
+        font-family: $pfont;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+
+.dimmer{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .8);
+}
+

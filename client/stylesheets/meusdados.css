@@ -1,0 +1,341 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+/* Colors */
+/* Defs */
+/* Init */
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#emergencia, #begin {
+  position: absolute;
+  bottom: 0;
+  right: -136px;
+  bottom: -132px;
+  height: 250px;
+  width: 320px;
+  background: transparent;
+  border: 0;
+  color: #da0505;
+  padding: 2em 4em;
+  padding-right: 8em;
+  outline: 0;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+#emergencia .content, #begin .content {
+  bottom: 150px;
+  right: 150px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 15pt;
+  position: absolute;
+}
+
+#emergencia .icon, #begin .icon {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-size: 28pt !important;
+  margin: .2em;
+}
+
+#begin {
+  color: #000;
+  top: 0px;
+  font-size: 30px;
+  right: -120px;
+}
+
+#begin .content .fas {
+  color: #68bed1;
+  font-size: 45pt !important;
+}
+
+#modal-case {
+  display: none;
+}
+
+#modal-case #modal-container {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18pt;
+  width: 750px;
+  margin-left: 35%;
+  margin-top: 15%;
+  position: absolute;
+  z-index: 3;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#modal-case #modal-container #modal-header {
+  display: inline-block;
+}
+
+#modal-case #modal-container #modal-header #modal-title {
+  padding: 20px 20px 0px 13px;
+  float: left;
+  width: 660px;
+  font-size: 25px;
+}
+
+#modal-case #modal-container #modal-header #modal-close {
+  padding: 25px 27px 0px 15px;
+  width: 10px;
+  color: #929292;
+  float: left;
+}
+
+#modal-case #modal-container #modal-header #modal-close:hover {
+  color: #000;
+}
+
+#modal-case #modal-container .modal-separator {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#modal-case #modal-container #modal-body {
+  minheight: 100px;
+  padding: 20px 30px 30px 30px;
+}
+
+#modal-case #modal-container #emergency-button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16pt;
+  padding: 25px;
+  font-size: 20px;
+  background-color: #68bed1;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  transition: .6s ease;
+  color: #fff;
+  width: 100%;
+}
+
+#modal-case #modal-container #emergency-button:hover {
+  color: #68bed1;
+  background-color: #fff;
+  border: 3px solid #68bed1;
+}
+
+#modal-case #modal-shadow {
+  background-color: rgba(0, 0, 0, 0.664);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.btn {
+  padding: 10px 70px;
+  margin: 20px;
+  border-radius: 50px;
+  border: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16pt;
+  color: #fff;
+  background: #68bed1;
+  outline: none;
+  border: 2px solid transparent;
+  transition: .6s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #fff;
+  border: 2px solid #68bed1;
+  color: #68bed1;
+  transition: .6s ease;
+}
+
+main {
+  padding: 0 2em;
+  display: grid;
+  grid-template-columns: 3fr 8fr;
+  border-radius: 25px;
+  margin: 1em;
+  box-shadow: 0 0 10px #e5e5e5;
+}
+
+main aside.personal {
+  padding-right: 2em;
+  border-right: 2px solid #eee;
+}
+
+main aside.personal .icon {
+  padding: 2em;
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+}
+
+main aside.personal h1#name {
+  font-family: "Raleway", sans-serif;
+  font-size: 18pt;
+  text-align: center;
+  color: #68bed1;
+}
+
+main aside.personal h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 15pt;
+  font-weight: 600;
+  color: #68bed1;
+  margin: 0;
+}
+
+main aside.personal h2 img {
+  position: relative;
+  top: 5px;
+  margin-right: .5em;
+  width: 25px;
+}
+
+main aside.personal #idade {
+  display: block;
+  padding-left: 2em;
+  font-family: "Roboto", sans-serif;
+}
+
+main aside.personal .btn {
+  display: block;
+  font-size: 18pt;
+  text-align: center;
+  margin-top: 12em;
+}
+
+main section.data {
+  padding: 0 2em;
+  padding-bottom: 5em;
+}
+
+main section.data .vitals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+main section.data .vitals h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 14pt;
+  text-transform: uppercase;
+  color: #68bed1;
+}
+
+main section.data .imc h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 14pt;
+  text-transform: uppercase;
+  color: #68bed1;
+}
+
+main section.data .consultas h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 14pt;
+  text-transform: uppercase;
+  color: #68bed1;
+}
+
+main section.data .consultas .consulta {
+  display: inline-block;
+  padding: .75em;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #eee;
+  border-bottom: 2px solid #68bed1;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+main section.data .consultas .consulta:hover {
+  background: #f5f5f5;
+}
+
+main section.data .consultas .consulta.expired {
+  opacity: .5;
+}
+
+main section.data .consultas .consulta .data {
+  display: block;
+  text-align: center;
+  font-size: 16pt;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  color: #68bed1;
+}
+
+main section.data .consultas .consulta .local {
+  text-align: center;
+  font-size: 9pt;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  color: #555;
+}
+
+#consulta-pop {
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  border-radius: 25px;
+  left: 50%;
+  padding: 1em;
+  transform: translateX(-50%);
+  top: 100px;
+  background: #fff;
+  z-index: 1;
+}
+
+#consulta-pop h1 {
+  text-align: center;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: #68bed1;
+  font-size: 20pt;
+  border-bottom: 2px solid #eee;
+  padding-bottom: .5em;
+}
+
+#consulta-pop h2 {
+  margin: .25em 0;
+}
+
+#consulta-pop .cdata {
+  font-family: "Roboto", sans-serif;
+}
+
+#consulta-pop .container {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-family: "Raleway", sans-serif;
+}
+
+#consulta-pop .container div {
+  margin-bottom: 1em;
+}
+
+#consulta-pop .block {
+  padding: 1em;
+  display: grid;
+  font-family: "Raleway", sans-serif;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dimmer {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,110 @@
+@import "main";
+
+main#confirm{
+    padding-top: 3em;
+    h1{
+        font-family: $pfont;
+        text-align: center;
+        color: $primary;    
+    }
+    h2{
+        font-family: $pfont;
+        text-align: center;
+        font-size: 24pt;
+        font-weight: 400;
+        padding: 0 10em;    
+    }
+    button{
+        display: block;
+        width: 500px;
+        height: 120px;
+        margin: 2em auto;
+        font-size: 24pt;
+    }
+}
+
+main#info{
+    display: none;
+    .ficha{
+        margin: 0 auto; 
+        margin-top: 2em;
+        width: 60%;
+        box-shadow: 0 4px 20px #eee;
+        padding: 1em;
+        border-radius: 25px;
+        h1{
+            margin: 0;
+            text-align: center;
+            font-family: $pfont;
+            font-weight: 700;
+            color: $primary;
+        }
+        hr{
+            border: 1px dashed #ccc;
+        }
+        .field{
+            margin: .25em 1.5em;
+            display: block;
+            font-family: $sfont;
+            font-size: 16pt;
+            font-weight: 600;
+        }
+        .value{
+            font-family: $pfont;
+            font-size: 16pt;
+            margin: .25em 1.5em;
+            display: block;
+        }
+        iframe{
+            width: 800px;
+            height: 300px;
+            display: block;
+            margin: .5em auto;
+        }
+        a{
+            display: block;
+        }
+    }
+}
+
+main#choose{
+    display: none;
+    h1{
+        font-family: $pfont;
+        text-align: center;
+        font-size: 36pt;
+        color: $primary;
+        font-weight: 400; 
+    }
+    .grid{
+        display: grid;
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: repeat(3, 1fr);
+        grid-gap: 2em;
+        .hospital{
+            border-bottom: 2px solid $primary;
+            text-decoration: none;
+            padding: 1.5em;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px #eee;
+            .title{
+                display: block;
+                color: #333;
+                font-size: 18pt;
+                font-family: $sfont;
+                font-weight: 500;
+            }
+            .addr{
+                color: #555;
+                display: block;
+                font-family: $sfont;
+
+            }
+            &:hover{
+                background: #f9f9f9;
+            }
+        }
+    }
+}

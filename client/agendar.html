@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PAAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/agendar.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC1vSkwIBJbgng0c8xiZfBzYUyWxifiUxc",
+        authDomain: "calisto-17e20.firebaseapp.com",
+        databaseURL: "https://calisto-17e20.firebaseio.com",
+        projectId: "calisto-17e20",
+        storageBucket: "calisto-17e20.appspot.com",
+        messagingSenderId: "32017833243"
+      };
+      firebase.initializeApp(config);
+      var db = firebase.database()
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="scripts/agendar.js"></script>
+</head>
+<body>
+    <main id='confirm'>
+        <h1>Agendamento de Consulta</h1>
+        <h2>Deseja agendar uma consulta no Hospital mais próximo?<br> Cuidaremos para que o processo seja agilizado com as informações que você nos forneceu!</h2>
+        <div class="actions">
+            <button class='btn' id='confirmbtn'>Sim</button>
+            <button class='btn' id='choosebtn'>Não, quero escolher um Hospital</button>
+        </div>
+    </main>
+    <main id='info'>
+        <div class="ficha">
+            <h1>Sua consulta foi marcada com sucesso!</h1>
+            <hr>
+            <span class='field'>Horário Estimado</span>
+            <span class='value' id='horario'>...</span>
+            <span class='field'>Endereço</span>
+            <span class='value' id='endereco'>...</span>
+            <span class='field'>Como Chegar</span>
+            <iframe
+            id='map'
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB80zqpYacbrOzt85xV_UI2I2Fcq6dwZ4w
+                &origin=ICMC
+                &destination=Santa+Casa
+                &mode=transit" allowfullscreen>
+            </iframe>
+            <span class='field'>Protocolo de Atendimento</span>
+            <span class='value' id='protocolo'>...</span>
+            <a class='btn' style='text-decoration: none' href='meusdados.html'>Continuar</a>
+            
+        </div>
+    </main>
+    <main id='choose'>
+        <h1>Escolha um dos seguintes Hospitais</h1>
+        <div class="grid">
+            <a href="#" onclick='setHospital(0)' class="hospital">
+                <span class="title">Santa Casa São Carlos</span>
+                <span class="addr"> R. Paulino Botelho de Abreu Sampaio, 573 - Jardim Pureza, São Carlos - SP, 13561-060</span>
+            </a>
+            <a href="#" onclick='setHospital(1)' class="hospital">
+                <span class="title">Casa de Saúde Hospital e Maternidade de São Carlos</span>
+                <span class="addr"> R. 7 de Setembro, 3033 - Centro, São Carlos - SP, 13560-000</span>
+            </a>
+            <a href="#" onclick='setHospital(2)' class="hospital">
+                <span class="title">Hospital Universitário da UFSCar</span>
+                <span class="addr">R. Luís Vaz de Camões, 111 - Vila Celina, São Carlos - SP, 13566-448</span>
+            </a>
+            <a href="#" onclick='setHospital(3)' class="hospital">
+                <span class="title">Centro Médico São Carlos</span>
+                <span class="addr">Rua Dona Maria Jacinta, 241 - Jardim Paraiso, São Carlos - SP, 13561-120</span>
+            </a>
+        </div>
+    </main>
+    <button id='emergencia'>
+        <div class='content'>
+            <i class="fas fa-ambulance icon"></i>
+            Emergência
+        </div>
+    </button>
+</body>
+</html>
